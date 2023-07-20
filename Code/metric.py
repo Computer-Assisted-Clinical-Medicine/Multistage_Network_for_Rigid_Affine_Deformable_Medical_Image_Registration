@@ -16,7 +16,7 @@ def jc(disp):
     for i in range(j_det.shape[0]):
         for j in range(j_det.shape[1]):
             for k in range(j_det.shape[2]):
-                if j_det[i,j,k] <0:
+                if j_det[i,j,k] <= 0:
                     jc=jc+1
     return jc
 
@@ -27,13 +27,14 @@ def jc_proz(disp):
     for i in range(j_det.shape[0]):
         for j in range(j_det.shape[1]):
             for k in range(j_det.shape[2]):
-                if j_det[i,j,k] <0:
+                if j_det[i,j,k] <= 0:
                     jc=jc+1
                 ges=ges+1
     return jc/ges*100
 
 def jacobian_determinant(disp):
     """
+    source: voxelmorph/voxelmorph/py/utils.py
     jacobian determinant of a displacement field.
     NB: to compute the spatial gradients, we use np.gradient.
     Parameters:
