@@ -11,26 +11,14 @@ def dice_coefficient(output, target, threshold=0.5, smooth=1e-5):
     return hard_dice
 
 def jc(disp):
-    jc=0
     j_det=jacobian_determinant(disp)
-    for i in range(j_det.shape[0]):
-        for j in range(j_det.shape[1]):
-            for k in range(j_det.shape[2]):
-                if j_det[i,j,k] <= 0:
-                    jc=jc+1
+    jc = (j_det <= 0).sum()
     return jc
 
 def jc_proz(disp):
-    jc=0
-    ges=0
-    j_det=jacobian_determinant(disp)
-    for i in range(j_det.shape[0]):
-        for j in range(j_det.shape[1]):
-            for k in range(j_det.shape[2]):
-                if j_det[i,j,k] <= 0:
-                    jc=jc+1
-                ges=ges+1
-    return jc/ges*100
+    jc_val = jc(disp)
+    ges = disp.shape[0] * disp.shape[1] * disp.shape[2]
+    return jc_val / ges * 100
 
 def jacobian_determinant(disp):
     """
