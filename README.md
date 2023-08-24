@@ -4,4 +4,5 @@ In order to provide a benchmark for comparison, we integrated a multistage netwo
 The framework was implemented using Keras with Tensorflow backend.
 
 # Architecture
-![Architecture_github](https://github.com/Computer-Assisted-Clinical-Medicine/Multistage_Network_for_Rigid_Affine_Deformable_Medical_Image_Registration/assets/129390849/7429c552-b280-43e2-b20a-8efe572a9443)
+![Architecture_github](https://github.com/Computer-Assisted-Clinical-Medicine/Multistage_Network_for_Rigid_Affine_Deformable_Medical_Image_Registration/assets/129390849/20de7e14-087d-4e9a-9e39-ddd293ed8b78)
+
